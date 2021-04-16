@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestCommit : MonoBehaviour
+public class RotateCamera : MonoBehaviour
 {
+    public float speed = 30.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,7 @@ public class TestCommit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float rotateInput = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.up, rotateInput * speed * Time.deltaTime);
     }
 }
